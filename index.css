@@ -1,0 +1,20 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEF9BF;
+}
+
+header h1 {
+    font-family: 'Roboto', 'Times New Roman', Times, serif;;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    color: #75B79E;
+}
+
+body {
+    background-color: #EEF9BF;
+}

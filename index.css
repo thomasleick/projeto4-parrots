@@ -1,12 +1,19 @@
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
 header {
+    height: 150px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #EEF9BF;
 }
 
-header h1 {
-    font-family: 'Roboto', 'Times New Roman', Times, serif;;
+h1 {
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
     font-style: normal;
     font-weight: 700;
     font-size: 56px;
@@ -16,5 +23,31 @@ header h1 {
 }
 
 body {
+    height: 100%;
+    width: 100%;
     background-color: #EEF9BF;
+}
+
+.cartas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.front {
+    width: 117px;
+    height: 146px;
+    margin: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
 }

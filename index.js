@@ -32,11 +32,12 @@ function clickCard(flipContainer, id) {
     if (flipedCard === null) {
         flipedCard = flipContainer;
         flipedId = id;
+        flipedCard.removeAttribute("onclick");
     }
         
     else if (flipedId === id) {
         flipContainer.removeAttribute("onclick");
-        flipedCard.removeAttribute("onclick");
+        
 
         cardsLeft -= 2;
         rounds += 2;
@@ -71,7 +72,8 @@ function clickCard(flipContainer, id) {
         }
     }
     else{
-        const fC = flipedCard
+        flipedCard.setAttribute("onclick", `clickCard(this, ${flipedId})`);
+        const fC = flipedCard;
         rounds++;
         flipedCard = null;
         flipedId = null;
@@ -83,6 +85,7 @@ function clickCard(flipContainer, id) {
 };
 
 function start() {
+    cards = -1;
 
     while (cards < 4 || cards % 2 !== 0 || cards > 14)
         cards = window.prompt("Com quantas cartas você gostaria de jogar? (4 a 14 cartas, números pares)", "");

@@ -127,6 +127,7 @@ img {
 
     .deck {
         flex-direction: column;
+        flex-wrap: nowrap;
     }
 
 }

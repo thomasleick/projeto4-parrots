@@ -36,12 +36,12 @@ function showCards() {
         body.innerHTML += 
             `   
                 <div class="maincontainer" onclick="clickCard(this, ${card.id})">
-                    <div class="card">
+                    <div class="card" data-test="card">
                         <div class="front">
-                            <img src="./files/back.png" alt="back" />
+                            <img src="./files/back.png" alt="back" data-test="face-down-image" />
                         </div>
                         <div class="back">
-                            <img src="./files/${card.name}.gif" alt="${card.name}" />
+                            <img src="./files/${card.name}.gif" alt="${card.name}" data-test="face-up-image" />
                         </div>
                     </div>
                 </div>

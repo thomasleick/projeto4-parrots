@@ -54,13 +54,22 @@ function clickCard(flipContainer, id) {
         flipedId = id;
     }
     
-    else if (flipedId === id) 
-        console.log("Iguais!")
-    else
+    else if (flipedId === id) {
+        flipContainer.removeAttribute("onclick");
+        flipedCard.removeAttribute("onclick");
+
+        flipedCard = null;
+        flipedId = null;
+    }
+    else{
+        const fC = flipedCard
+        flipedCard = null;
+        flipedId = null;
         setTimeout(() => {
             card.classList.toggle("flipCard");
-            flipedCard.getElementsByClassName("card")[0].classList.toggle("flipCard");
+            fC.getElementsByClassName("card")[0].classList.toggle("flipCard");
         }, 1000);
+    }
 };
 
 showCards();

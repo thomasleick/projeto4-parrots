@@ -1,9 +1,13 @@
 let cards = 0;
 let flipedCard = null;
 let flipedId = null;
+let rounds = 0;
+let cardsLeft = 0;
 
 while (cards < 4 || cards % 2 !== 0 || cards > 14)
     cards = window.prompt("Com quantas cartas você gostaria de jogar? (4 a 14 cartas, números pares)", "");
+
+cardsLeft = cards;
 
 const carta1 = {id: 0, name: "bobrossparrot"};
 const carta2 = {id: 0, name: "bobrossparrot"};
@@ -58,11 +62,22 @@ function clickCard(flipContainer, id) {
         flipContainer.removeAttribute("onclick");
         flipedCard.removeAttribute("onclick");
 
+        cardsLeft -= 2;
+        rounds++;
         flipedCard = null;
         flipedId = null;
+
+        if (cardsLeft === 0) {
+            setTimeout(() => {
+                window.alert(`Parabéns!, você venceu em ${rounds} jogadas.`);
+            }, 500);
+            
+        }
     }
     else{
         const fC = flipedCard
+
+        rounds++;
         flipedCard = null;
         flipedId = null;
         setTimeout(() => {

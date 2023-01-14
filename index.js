@@ -24,12 +24,36 @@ const deckFull = [carta1, carta2, carta3, carta4, carta5, carta6, carta7,
 const deck = deckFull.slice(0, cards).sort((a, b) => 0.5 - Math.random());
 
 function showCards() {
-    const body = document.querySelector('.cartas');
+    const body = document.querySelector('.deck');
 
     deck.forEach(card => {
-        body.innerHTML += `<div class="front hidden"><img src="./files/${card.name}.gif" alt="${card.name}" /></div>`;
+        //body.innerHTML += `<div class="card hidden"><img src="./files/${card.name}.gif" alt="${card.name}" /></div>`;
+
+        body.innerHTML += 
+            `
+                <div class="flip-container" onclick="clickCard(this)">
+                    <div class="fullCard">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="card">
+                                <img src="./files/back.png" alt="back" />
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="card">
+                                <img src="./files/${card.name}.gif" alt="${card.name}" />
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            `;
     })
 }
 
+function clickCard(flipContainer) {
+    console.log(flipContainer);
+    flipContainer.classList.toggle("flipper");
+}
 
 showCards();

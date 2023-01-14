@@ -28,16 +28,17 @@ body {
     background-color: #EEF9BF;
 }
 
-.cartas {
+.deck {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.front {
+.card {
     width: 117px;
     height: 146px;
+    perspective: 147px;
     margin: 17px;
     display: flex;
     align-items: center;
@@ -47,7 +48,40 @@ body {
     border-radius: 5px;
 }
 
+.fullCard {
+    width: 117px;
+    height: 146px;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flipper{
+    position: relative;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    top: -90px;
+    left: -78px;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.back{
+	transform: rotateY(180deg);
+}
+
 img {
     width: 100px;
     height: 100px;
+}
+
+.flip-container{
+    margin: 17px;
 }

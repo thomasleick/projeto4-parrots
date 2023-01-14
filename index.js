@@ -78,7 +78,7 @@ function clickCard(flipContainer, id) {
 
         if (cardsLeft === 0) {
             setTimeout(() => {
-                window.alert(`Você ganhou em ${rounds} jogadas!`);
+                window.alert(`Você ganhou em ${rounds} jogadas! A duração do jogo foi de ${seconds} segundos!`);
             }, 500);
             
         }

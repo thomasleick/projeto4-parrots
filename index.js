@@ -63,13 +63,13 @@ function clickCard(flipContainer, id) {
         flipedCard.removeAttribute("onclick");
 
         cardsLeft -= 2;
-        rounds++;
+        rounds += 2;
         flipedCard = null;
         flipedId = null;
 
         if (cardsLeft === 0) {
             setTimeout(() => {
-                window.alert(`Parabéns!, você venceu em ${rounds} jogadas.`);
+                window.alert(`Você ganhou em ${rounds} jogadas!`);
             }, 500);
             
         }

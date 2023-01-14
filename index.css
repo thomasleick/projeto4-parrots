@@ -83,3 +83,20 @@ img {
 .flipCard {
     transform: rotateY(180deg);
 }
+
+@media (max-width : 350px) {
+
+    h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: -0.004em;
+    }
+
+    .deck {
+        flex-direction: column;
+    }
+
+}

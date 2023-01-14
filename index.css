@@ -33,13 +33,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: blue;
 }
 
 .card {
-    width: 117px;
-    height: 146px;
     perspective: 147px;
-    margin: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,28 +46,21 @@ body {
     border-radius: 5px;
 }
 
-.fullCard {
+.card{
+    
     width: 117px;
     height: 146px;
-    perspective: 1000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.flipper{
-    position: relative;
-	transition: transform 0.8s;
-	transform-style: preserve-3d;
-    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
 }
 
 .front, .back {
     position: absolute;
-    top: -90px;
-    left: -78px;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     backface-visibility: hidden;
 }
 
@@ -82,6 +73,14 @@ img {
     height: 100px;
 }
 
-.flip-container{
-    margin: 17px;
+.maincontainer{
+    width: 117px;
+    height: 146px;
+    background: none;
+    padding: 12px;
+
+}
+
+.flipCard {
+    transform: rotateY(180deg);
 }

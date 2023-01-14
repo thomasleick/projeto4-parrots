@@ -1,4 +1,6 @@
 let cards = 0;
+let flipedCard = null;
+let flipedId = null;
 
 while (cards < 4 || cards % 2 !== 0 || cards > 14)
     cards = window.prompt("Com quantas cartas você gostaria de jogar? (4 a 14 cartas, números pares)", "");
@@ -27,33 +29,38 @@ function showCards() {
     const body = document.querySelector('.deck');
 
     deck.forEach(card => {
-        //body.innerHTML += `<div class="card hidden"><img src="./files/${card.name}.gif" alt="${card.name}" /></div>`;
-
         body.innerHTML += 
-            `
-                <div class="flip-container" onclick="clickCard(this)">
-                    <div class="fullCard">
-                    <div class="flipper">
+            `   
+                <div class="maincontainer" onclick="clickCard(this, ${card.id})">
+                    <div class="card">
                         <div class="front">
-                            <div class="card">
-                                <img src="./files/back.png" alt="back" />
-                            </div>
+                            <img src="./files/back.png" alt="back" />
                         </div>
                         <div class="back">
-                            <div class="card">
-                                <img src="./files/${card.name}.gif" alt="${card.name}" />
-                            </div>
+                            <img src="./files/${card.name}.gif" alt="${card.name}" />
                         </div>
-                    </div>
                     </div>
                 </div>
             `;
     })
-}
+};
 
-function clickCard(flipContainer) {
-    console.log(flipContainer);
-    flipContainer.classList.toggle("flipper");
-}
+function clickCard(flipContainer, id) {
+    const card = flipContainer.getElementsByClassName("card")[0];
+    card.classList.toggle("flipCard");
+
+    if (flipedCard === null) {
+        flipedCard = flipContainer;
+        flipedId = id;
+    }
+    
+    else if (flipedId === id) 
+        console.log("Iguais!")
+    else
+        setTimeout(() => {
+            card.classList.toggle("flipCard");
+            flipedCard.getElementsByClassName("card")[0].classList.toggle("flipCard");
+        }, 1000);
+};
 
 showCards();

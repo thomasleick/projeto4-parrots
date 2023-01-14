@@ -9,6 +9,7 @@ while (cards < 4 || cards % 2 !== 0 || cards > 14)
 
 cardsLeft = cards;
 
+
 const carta1 = {id: 0, name: "bobrossparrot"};
 const carta2 = {id: 0, name: "bobrossparrot"};
 const carta3 = {id: 1, name: "explodyparrot"};
@@ -48,6 +49,14 @@ function showCards() {
             `;
     })
 };
+
+let seconds = 0;
+
+setInterval(function () {
+    seconds++;
+    document.getElementById("timer").innerHTML = `${seconds}`;
+},1000)
+
 
 function clickCard(flipContainer, id) {
     const card = flipContainer.getElementsByClassName("card")[0];

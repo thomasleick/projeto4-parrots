@@ -53,10 +53,6 @@ body {
     background: #A7E9AF;
     border: 1px solid #99CEA8;
     border-radius: 5px;
-}
-
-.card{
-    
     width: 117px;
     height: 146px;
     transform-style: preserve-3d;
@@ -77,6 +73,10 @@ body {
 	transform: rotateY(180deg);
 }
 
+.flipCard {
+    transform: rotateY(180deg);
+}
+
 img {
     width: 100px;
     height: 100px;
@@ -90,9 +90,7 @@ img {
 
 }
 
-.flipCard {
-    transform: rotateY(180deg);
-}
+
 
 @media (max-width : 600px) {
 

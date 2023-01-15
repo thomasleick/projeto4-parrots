@@ -74,7 +74,7 @@ function clickCard(flipContainer, id) {
     else{
         flipedCard.setAttribute("onclick", `clickCard(this, ${flipedId})`);
         const fC = flipedCard;
-        rounds++;
+        rounds += 2;
         flipedCard = null;
         flipedId = null;
         setTimeout(() => {
@@ -86,6 +86,7 @@ function clickCard(flipContainer, id) {
 
 function start() {
     cards = -1;
+    rounds = 0;
 
     while (cards < 4 || cards % 2 !== 0 || cards > 14)
         cards = window.prompt("Com quantas cartas você gostaria de jogar? (4 a 14 cartas, números pares)", "");
